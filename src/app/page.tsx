@@ -114,7 +114,7 @@ export default function Home() {
             </header>
             <div className="overflow-y-auto h-[calc(100vh-3rem)]">
               {/* Extended menu content */}
-              {Array(20)
+              {Array(60)
                 .fill(0)
                 .map((_, index) => (
                   <p key={index}>
@@ -218,22 +218,31 @@ export default function Home() {
             }`}
           >
             {/* Chatbot */}
-            <div className="bg-pink-600 h-full">
-              <div className="w-full flex flex-col items-center py-2 px-4">
-                <p className={`${isMobile ? "w-full" : "w-1/2"} mx-auto mb-4`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Adipisci suscipit vitae nam nesciunt sapiente facilis maiores
-                  incidunt corporis rerum libero dolor impedit fugiat, aut
-                  veritatis tempora. Iste maxime praesentium vel? check how well
-                  u feel to take the exam tommroew
-                </p>
-                {/* Widget button */}
-                <button
-                  onClick={toggleWidget}
-                  className="border-2 p-2 bg-purple-500 text-white"
-                >
-                  Open Widget
-                </button>
+            {/* Chatbot */}
+            <div className="flex flex-col h-full overflow-hidden">
+              <div className="flex-1 min-h-0 overflow-y-auto bg-pink-600">
+                {Array(60)
+                  .fill(0)
+                  .map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-full flex flex-col items-center py-2 px-4"
+                    >
+                      <p
+                        className={`${
+                          isMobile ? "w-full" : "w-1/2"
+                        } mx-auto mb-4`}
+                      >
+                        Lorem ipsum dolor sit amet... #{i + 1}
+                      </p>
+                      <button
+                        onClick={toggleWidget}
+                        className="border-2 p-2 bg-purple-500 text-white"
+                      >
+                        Open Widget
+                      </button>
+                    </div>
+                  ))}
               </div>
             </div>
 
@@ -254,7 +263,7 @@ export default function Home() {
                   <h2 className="text-xl font-bold text-white mb-4">
                     Widget Content
                   </h2>
-                  {Array(50)
+                  {Array(60)
                     .fill(0)
                     .map((_, i) => (
                       <p key={i} className="text-white mb-4">
@@ -292,7 +301,7 @@ export default function Home() {
                   Widget Content
                 </h2>
                 {/* Widget content here - more paragraphs to test scrolling */}
-                {Array(40)
+                {Array(60)
                   .fill(0)
                   .map((_, i) => (
                     <p key={i} className="text-white mb-4">
